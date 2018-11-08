@@ -1,0 +1,10 @@
+C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\bin\Debug\EncryptApp.exe.config
+C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\bin\Debug\EncryptApp.exe
+C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\bin\Debug\EncryptApp.pdb
+C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\obj\Debug\EncryptApp.csprojAssemblyReference.cache
+C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\obj\Debug\EncryptApp.Form1.resources
+C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\obj\Debug\EncryptApp.Properties.Resources.resources
+C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\obj\Debug\EncryptApp.csproj.GenerateResource.cache
+C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\obj\Debug\EncryptApp.csproj.CoreCompileInputs.cache
+C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\obj\Debug\EncryptApp.exe
+C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\obj\Debug\EncryptApp.pdb
