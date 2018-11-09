@@ -36,23 +36,27 @@ namespace EncryptApp
             }
             
         }
-        void Decrypt(string filePath, byte password)
+        void Decrypt(string filePath, byte[] password)
         {
+
             byte[] content = File.ReadAllBytes(filePath);
 
             for (int i = 0; i < content.Length; i++)
             {
-                int sum = (content[i] - password) % 256;
+                int indexInPwd = i % password.Length;
+                int sum = (content[i] - password[indexInPwd]) % 256;
                 content[i] = (byte)sum;
             }
             File.WriteAllBytes(filePath, content);
         }
-        void Encrypt(string filePath, byte password)
+        void Encrypt(string filePath, byte[] password)
         {
+
             byte[] content = File.ReadAllBytes(filePath);
             for (int i = 0; i < content.Length; i++)
             {
-                int sum = (content[i] + password) % 256;
+                int indexInPwd = i % password.Length;
+                int sum = (content[i] + password[indexInPwd]) % 256;
                 content[i] = (byte)sum;
             }
             File.WriteAllBytes(filePath, content);
@@ -60,7 +64,7 @@ namespace EncryptApp
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
             string pwdText = txtPwd.Text;
-            byte password = Byte.Parse(pwdText);
+            byte[] password = getBytesFromPassword(pwdText);
             string file = txtPath.Text;
             Encrypt(file, password);
             MessageBox.Show("Encrypted!");
@@ -77,7 +81,7 @@ namespace EncryptApp
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
             string pwdText = txtPwd.Text;
-            byte password = Byte.Parse(pwdText);
+            byte[] password = getBytesFromPassword(pwdText);
             string file = txtPath.Text;
             Decrypt(file, password);
             MessageBox.Show("Decrypted!");
