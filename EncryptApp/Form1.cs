@@ -13,6 +13,7 @@ namespace EncryptApp
 {
     public partial class Form1 : Form
     {
+        EncryptUtil util = new EncryptUtil();
         public Form1()
         {
             InitializeComponent();
@@ -22,68 +23,24 @@ namespace EncryptApp
         {
             if (openFile.ShowDialog() == DialogResult.OK)
             {
-                //Get the path of specified file
                 string filePath = openFile.FileName;
                 txtPath.Text = filePath;
-                //Read the contents of the file into a stream
-                //var fileStream = openFile.OpenFile();
-
-                //using (StreamReader reader = new StreamReader(fileStream))
-                //{
-                //    string fileContent = reader.ReadToEnd();
-                //}
-
             }
-            
         }
-        void Decrypt(string filePath, byte[] password)
-        {
-
-            byte[] content = File.ReadAllBytes(filePath);
-
-            for (int i = 0; i < content.Length; i++)
-            {
-                int indexInPwd = i % password.Length;
-                int sum = (content[i] - password[indexInPwd]) % 256;
-                content[i] = (byte)sum;
-            }
-            File.WriteAllBytes(filePath, content);
-        }
-        void Encrypt(string filePath, byte[] password)
-        {
-
-            byte[] content = File.ReadAllBytes(filePath);
-            for (int i = 0; i < content.Length; i++)
-            {
-                int indexInPwd = i % password.Length;
-                int sum = (content[i] + password[indexInPwd]) % 256;
-                content[i] = (byte)sum;
-            }
-            File.WriteAllBytes(filePath, content);
-        }
+        
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
-            string pwdText = txtPwd.Text;
-            byte[] password = getBytesFromPassword(pwdText);
-            string file = txtPath.Text;
-            Encrypt(file, password);
+            util.filePath = txtPath.Text;
+            util.password = txtPwd.Text;
+            util.Encrypt();
             MessageBox.Show("Encrypted!");
         }
-        private byte[] getBytesFromPassword(string password)
-        {
-            byte[] result = new byte[password.Length];
-            for(int i = 0; i < password.Length; i++)
-            {
-                result[i] = (byte)password[i];
-            }
-            return result;
-        }
+        
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
-            string pwdText = txtPwd.Text;
-            byte[] password = getBytesFromPassword(pwdText);
-            string file = txtPath.Text;
-            Decrypt(file, password);
+            util.filePath = txtPath.Text;
+            util.password = txtPwd.Text;
+            util.Decrypt();
             MessageBox.Show("Decrypted!");
         }
     }
