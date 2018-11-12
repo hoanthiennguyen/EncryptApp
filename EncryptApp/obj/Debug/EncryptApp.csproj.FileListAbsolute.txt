@@ -8,3 +8,7 @@ C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\obj\Debug\EncryptApp.csproj.Gen
 C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\obj\Debug\EncryptApp.csproj.CoreCompileInputs.cache
 C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\obj\Debug\EncryptApp.exe
 C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\obj\Debug\EncryptApp.pdb
+C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\bin\Debug\EncryptApp.exe.manifest
+C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\bin\Debug\EncryptApp.application
+C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\obj\Debug\EncryptApp.exe.manifest
+C:\Users\USER\Documents\C#\EncryptApp\EncryptApp\obj\Debug\EncryptApp.application

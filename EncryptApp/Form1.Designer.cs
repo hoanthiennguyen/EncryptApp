@@ -35,6 +35,9 @@
             this.btnDecrypt = new System.Windows.Forms.Button();
             this.txtPwd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.error = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // openFile
@@ -62,7 +65,7 @@
             // btnEncrypt
             // 
             this.btnEncrypt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnEncrypt.Location = new System.Drawing.Point(12, 109);
+            this.btnEncrypt.Location = new System.Drawing.Point(12, 130);
             this.btnEncrypt.Name = "btnEncrypt";
             this.btnEncrypt.Size = new System.Drawing.Size(75, 23);
             this.btnEncrypt.TabIndex = 2;
@@ -73,7 +76,7 @@
             // btnDecrypt
             // 
             this.btnDecrypt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnDecrypt.Location = new System.Drawing.Point(155, 109);
+            this.btnDecrypt.Location = new System.Drawing.Point(155, 130);
             this.btnDecrypt.Name = "btnDecrypt";
             this.btnDecrypt.Size = new System.Drawing.Size(75, 23);
             this.btnDecrypt.TabIndex = 3;
@@ -83,11 +86,12 @@
             // 
             // txtPwd
             // 
+            this.txtPwd.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtPwd.Location = new System.Drawing.Point(12, 72);
             this.txtPwd.Name = "txtPwd";
-            this.txtPwd.PasswordChar = '*';
             this.txtPwd.Size = new System.Drawing.Size(218, 20);
             this.txtPwd.TabIndex = 4;
+            this.txtPwd.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -99,18 +103,51 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Password";
             // 
+            // txtConfirmPassword
+            // 
+            this.txtConfirmPassword.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.txtConfirmPassword.Location = new System.Drawing.Point(12, 98);
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.Size = new System.Drawing.Size(218, 20);
+            this.txtConfirmPassword.TabIndex = 6;
+            this.txtConfirmPassword.UseSystemPasswordChar = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(250, 105);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Confirm password";
+            // 
+            // error
+            // 
+            this.error.AutoSize = true;
+            this.error.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error.ForeColor = System.Drawing.Color.Red;
+            this.error.Location = new System.Drawing.Point(12, 9);
+            this.error.Name = "error";
+            this.error.Size = new System.Drawing.Size(46, 17);
+            this.error.TabIndex = 8;
+            this.error.Text = "label3";
+            this.error.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 158);
+            this.ClientSize = new System.Drawing.Size(364, 180);
+            this.Controls.Add(this.error);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtConfirmPassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.btnDecrypt);
             this.Controls.Add(this.btnEncrypt);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.btnOpen);
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Encrypt";
@@ -128,6 +165,9 @@
         private System.Windows.Forms.Button btnDecrypt;
         private System.Windows.Forms.TextBox txtPwd;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtConfirmPassword;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label error;
     }
 }
 
